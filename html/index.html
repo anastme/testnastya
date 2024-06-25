@@ -2,13 +2,66 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Тестик</title>
 </head>
 
 <body>
+    <!-- start button -->
+    <div class="start-btn"><button>Старт</button></div>
 
+    <!-- quiz -->
+    <div class="quiz">
+        <header class="header">
+            <h2 class="title">Мини-тестик от Насти</h2>
+            <div class="timer">
+                <div class="timer__text"></div>
+                <div class="timer__sec"></div>
+            </div>
+            <div class="time-line"></div>
+        </header>
+
+        <section class="question">
+            <h3 class="question__text"></h3>
+            <ul class="question__answers-list answers-list">
+                <!-- <li class="answers-list__item">
+						<span></span>
+					</li>
+					<li class="answers-list__item">
+						<span></span>
+					</li>
+					<li class="answers-list__item">
+						<span></span>
+					</li>
+					<li class="answers-list__item">
+						<span></span>
+					</li> -->
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p class="total-questions">
+                <!-- <span></span> of <span></span> Questions -->
+            </p>
+            <button class="next-btn">Далее</button>
+        </footer>
+    </div>
+
+    <!-- result -->
+    <div class="result">
+        <h2 class="result__title">Вы умничка!!!</h2>
+        <h3 class="result__text"></h3>
+        <div class="buttons">
+            <button class="restart">Заново</button>
+            <button class="quit">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="../js/questions.js"></script>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
