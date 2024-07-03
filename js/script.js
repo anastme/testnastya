@@ -2,7 +2,6 @@ const startBtn = document.querySelector(".start-btn button");
 const quizBlock = document.querySelector(".quiz");
 const resultBlock = document.querySelector(".result");
 const answersList = document.querySelector(".answers-list");
-const timeLine = document.querySelector("header .time-line");
 const timerText = document.querySelector(".timer .timer__text");
 const timeCount = document.querySelector(".timer .timer__sec");
 
@@ -12,7 +11,6 @@ startBtn.onclick = () => {
     showQuestions(0);
     questionCounter(1);
     startTimer(15);
-    startTimerLine(0);
 };
 
 let timeValue = 15;
@@ -41,7 +39,6 @@ restartQuiz.onclick = () => {
     clearInterval(counter);
     clearInterval(counterLine);
     startTimer(timeValue);
-    startTimerLine(widthValue);
 
     timerText.textContent = "Секунд осталось";
     nextBtn.classList.remove("show");
@@ -64,7 +61,6 @@ nextBtn.onclick = () => {
         clearInterval(counter);
         clearInterval(counterLine);
         startTimer(timeValue);
-        startTimerLine(widthValue);
 
         timerText.textContent = "Ещё секунд";
         nextBtn.classList.remove("show");
@@ -176,25 +172,13 @@ function startTimer(time) {
                         "class",
                         "answers-list__item correct"
                     );
-                    console.log("Time Off: Auto selected correct answer.");
+                    console.log("Время вышло,ответ выбран автоматически.");
                 }
             }
             for (i = 0; i < allOptions; i++) {
                 answersList.children[i].classList.add("disabled");
             }
             nextBtn.classList.add("show");
-        }
-    }
-}
-
-function startTimerLine(time) {
-    counterLine = setInterval(timer, 29);
-
-    function timer() {
-        time += 1;
-        timeLine.style.width = time + "px";
-        if (time > 549) {
-            clearInterval(counterLine);
         }
     }
 }
